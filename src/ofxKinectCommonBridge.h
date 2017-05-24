@@ -108,8 +108,10 @@ class ofxKinectCommonBridge : protected ofThread {
 	// new API
 	bool initSensor( int id = 0 );
 	bool createDepthPixels( int width = 0, int height = 0 );
+	void createDepthTexture();
 	bool initDepthStream( int width, int height, bool nearMode = false, bool mapColorToDepth = false );
 	bool createColorPixels( int width = 0, int height = 0 );
+	void createColorTexture();
 	bool initColorStream( int width, int height, bool mapColorToDepth = false );
 	bool initIRStream( int width, int height );
 	bool initSkeletonStream( bool seated );
