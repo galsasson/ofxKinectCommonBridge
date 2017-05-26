@@ -696,15 +696,10 @@ void ofxKinectCommonBridge::createDepthTexture()
 	if (bProgrammableRenderer)
 	{
 		//int w, int h, int glInternalFormat, bool bUseARBExtention, int glFormat, int pixelType
-		depthTex.allocate(depthFormat.dwWidth, depthFormat.dwHeight, GL_R8);//, true, GL_R8, GL_UNSIGNED_BYTE);
+		depthTex.allocate(depthFormat.dwWidth, depthFormat.dwHeight, GL_R8);
 		depthTex.setRGToRGBASwizzles(true);
-
-		//rawDepthTex.allocate(depthFormat.dwWidth, depthFormat.dwHeight, GL_R16, true, GL_RED, GL_UNSIGNED_SHORT);
-		rawDepthTex.allocate(depthPixelsRaw, true);
+		rawDepthTex.allocate(depthFormat.dwWidth, depthFormat.dwHeight, GL_R16);
 		rawDepthTex.setRGToRGBASwizzles(true);
-
-		cout << rawDepthTex.getWidth() << " " << rawDepthTex.getHeight() << endl;
-		//depthTex.allocate(depthFormat.dwWidth, depthFormat.dwHeight, GL_RGB);
 	}
 	else
 	{
